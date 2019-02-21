@@ -1,6 +1,6 @@
 # Cellular Automata GUI
 
-This is an implementation of different [cellular automata][https://en.wikipedia.org/wiki/Cellular_automaton] in Matlab (written and tested in Matlab 2017b). 
+This is an implementation of different [cellular automata](https://en.wikipedia.org/wiki/Cellular_automaton) in Matlab (written and tested in Matlab 2017b). 
 - [Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 - Majority Game
 - Copy Cat
