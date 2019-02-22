@@ -39,6 +39,7 @@ function [  ] = setDefault_fun(~,~)
     
     default('WOLF','RULE',1);
     default('WOLF','INFINITYLOOP',1);
+    default('WOLF','RENDERSPEED',1);
     
     ax_h = imagesc(IMAGEstart);
     title({'','',''});
@@ -111,10 +112,12 @@ function [  ] = setDefault_fun(~,~)
         global WOLFeditbox1_h;
         global WOLFslider2_h;
         global WOLFcheckbox3_h;
+        global WOLFeditbox4_h;
     % set all default values!
         WOLFeditbox1_h.String = WOLF.RULE;
         WOLFslider2_h.Value   = WOLF.RULE;
         WOLFcheckbox3_h.Value = WOLF.INFINITYLOOP;
+        WOLFeditbox4_h.String = WOLF.RENDERSPEED;
             
 
 end

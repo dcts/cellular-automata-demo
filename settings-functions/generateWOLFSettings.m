@@ -10,10 +10,12 @@ function [] = generateWOLFSettings(visible)
     
     % set global variables
     global WOLFtext1_h;         % text: RULE
-    global WOLFtext2_h;         % text: RANDOM
+    global WOLFtext2_h;         % text: INFINITYLOOP
+    global WOLFtext3_h;         % text: RENDER SPEED
     global WOLFeditbox1_h;          % value: RULE
     global WOLFslider2_h;           % value: RULE
-    global WOLFcheckbox3_h;         % value: RANDOM
+    global WOLFcheckbox3_h;         % value: INFINITYLOOP
+    global WOLFeditbox4_h;          % value: RENDER SPEED
 
     
     
@@ -36,6 +38,14 @@ function [] = generateWOLFSettings(visible)
         'Units', 'normalized', ...
         'Position', [0.05 0.58 0.9 0.16]);
     
+    % static: INFINITYLOOP
+    WOLFtext3_h = uicontrol('Style', 'text',...
+        'Parent', panelSettings_h, ...
+        'Visible', visible, ...
+        'HorizontalAlignment', 'left', ...
+        'String', 'RENDER SPEED . . . . . . . . ', ...
+        'Units', 'normalized', ...
+        'Position', [0.05 0.48 0.9 0.16]);
     
     
     %% INSERT VALUES (editboxes/checkbox)
@@ -62,16 +72,26 @@ function [] = generateWOLFSettings(visible)
         'Units', 'normalized', ...
         'Position', [0.79 0.68 0.25 0.08]);
 
+    % insert: RENDER SPEED
+    WOLFeditbox4_h = uicontrol('Style', 'edit',...
+        'Parent', panelSettings_h, ...
+        'Visible', visible, ...    
+        'Units', 'normalized', ...
+        'Position', [0.70 0.58 0.25 0.08]);
+
+   
     
 
     %% ADD TAGS AND CALLBACKS
     WOLFeditbox1_h.Tag  = 'WOLF.RULE';               
     WOLFslider2_h.Tag   = 'WOLF.RULE_SLIDER';
-    WOLFcheckbox3_h.Tag = 'WOLF.INFINITYLOOP';            
+    WOLFcheckbox3_h.Tag = 'WOLF.INFINITYLOOP';   
+    WOLFeditbox4_h.Tag = 'WOLF.RENDERSPEED';            
     
     WOLFeditbox1_h.Callback  = @edit_fun;
     WOLFslider2_h.Callback   = @edit_fun;
     WOLFcheckbox3_h.Callback = @edit_fun;
+    WOLFeditbox4_h.Callback = @edit_fun;
     
     
     

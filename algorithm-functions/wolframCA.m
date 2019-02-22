@@ -12,7 +12,6 @@ interrupted = 0;
 
 % SETTINGS
 N                   = 200;
-render_speed        = 4;
 rand_initialization = 0;
 alive               = 0.01;
 
@@ -73,7 +72,7 @@ i = 1;
 
             m(i,:) = line;
             
-            if (generation>=N && mod(generation, render_speed)==0) 
+            if (generation>=N && mod(generation, WOLF.RENDERSPEED)==0) 
                 ax_h = imagesc(m);
                 colormap(colVec)
                 caxis([0 1]);

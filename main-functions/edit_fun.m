@@ -13,6 +13,7 @@ function edit_fun(obj,~)
     global GOLeditbox2_h;
     global WOLFslider2_h;
     global WOLFeditbox1_h;
+    global WOLFeditbox4_h;
                 
     % stop computation if currently running
     running = RUNNING;
@@ -204,13 +205,29 @@ function edit_fun(obj,~)
             WOLF.INFINITYLOOP = obj.Value;
             if WOLF.INFINITYLOOP == 1
                 buttonStart_h.Visible = 'on';
+                WOLF.RENDERSPEED = 4;
+                WOLFeditbox4_h.String = num2str(WOLF.RENDERSPEED);
             else
                 buttonStart_h.Visible = 'off';
+                WOLF.RENDERSPEED = 'NA';
+                WOLFeditbox4_h.String = WOLF.RENDERSPEED;
                 if running == 0
                     start_fun;
                 end
             end
-        
+            
+        case 'WOLF.RENDERSPEED'
+            if isnan(str2double(obj.String))
+                done = repair();
+            else
+                if WOLF.INFINITYLOOP == 1
+                    x = trimm(1,200,1);
+                    WOLF.RENDERSPEED = x;
+                else
+                    setNA = 1;
+                end
+            end
+            
         otherwise
             error('check editbox_fun / editbox.Tags !!!');
     end

@@ -25,6 +25,7 @@ function [output] = default(str,str2,bool)
     
     WOLFd.RULE         = 161;
     WOLFd.INFINITYLOOP = false;
+    WOLFd.RENDERSPEED  = 'NA';
     
     % load global variables
     global GOL
@@ -160,10 +161,15 @@ function [output] = default(str,str2,bool)
                     if bool
                         WOLF.INFINITYLOOP = output;
                     end
+                case 'RENDERSPEED'
+                    output = WOLFd.RENDERSPEED;
+                    if bool 
+                        WOLF.RENDERSPEED = output;
+                    end
                 otherwise
                     disp('error in getDefault-function! 2nd input is not valid!');
             end
-            
+
         otherwise
             disp('error in getDefault-function! 1st input is not valid!');
     end

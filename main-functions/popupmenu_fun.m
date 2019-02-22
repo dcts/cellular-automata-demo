@@ -178,12 +178,16 @@ end
 function [] = turnWOLF(str)
     global WOLFtext1_h;
     global WOLFtext2_h;
+    global WOLFtext3_h;
     global WOLFeditbox1_h;
     global WOLFslider2_h;
     global WOLFcheckbox3_h;
+    global WOLFeditbox4_h;
     WOLFtext1_h.Visible = str;
     WOLFtext2_h.Visible = str;
+    WOLFtext3_h.Visible = str;
     WOLFeditbox1_h.Visible = str;
     WOLFslider2_h.Visible = str;
     WOLFcheckbox3_h.Visible = str;
+    WOLFeditbox4_h.Visible = str;
 end
