@@ -71,14 +71,16 @@ i = 1;
             line(pattern==  0) = r8;
 
             m(i,:) = line;
-
-            ax_h = imagesc(m);
-            colormap(colVec)
-            caxis([0 1]);
-            set(gca,'XTickLabel','', 'YTickLabel','')
-            set(gca,'XTick',0, 'YTick',0)
-            title({'','WOLFRAMS CELLULAR AUTOMATA',['rule ', num2str(WOLF.RULE)]});
-            drawnow;
+            
+            if (generation>=N) 
+                ax_h = imagesc(m);
+                colormap(colVec)
+                caxis([0 1]);
+                set(gca,'XTickLabel','', 'YTickLabel','')
+                set(gca,'XTick',0, 'YTick',0)
+                title({'','WOLFRAMS CELLULAR AUTOMATA',['rule ', num2str(WOLF.RULE)]});
+                drawnow;
+            end
             if i==N
                 i=i-1;
                 m = [m(2:end, :);zeros(1,N)];
